@@ -1,0 +1,56 @@
+{
+  "name": "dsh-plugin-scroll-memory",
+  "version": "0.1.0",
+  "type": "module",
+  "description": "DSH plugin page scroll memory: returning from a plugin detail goes back to where the list was instead of jumping to the top. 插件管理页滚动位置记忆。",
+  "keywords": [
+    "dsh-plugin",
+    "dsh",
+    "deepseek-harness",
+    "scroll",
+    "ui"
+  ],
+  "license": "MIT",
+  "author": "chenyidong",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/chenyidong/dsh-plugin-scroll-memory.git"
+  },
+  "homepage": "https://github.com/chenyidong/dsh-plugin-scroll-memory#readme",
+  "bugs": {
+    "url": "https://github.com/chenyidong/dsh-plugin-scroll-memory/issues"
+  },
+  "exports": {
+    ".": "./index.js",
+    "./client": "./client.js",
+    "./icon": "./icon.svg",
+    "./package.json": "./package.json"
+  },
+  "scripts": {
+    "test": "node test.cjs"
+  },
+  "files": [
+    "index.js",
+    "client.js",
+    "cordis.patch.yml",
+    "icon.svg",
+    "README.md",
+    "LICENSE"
+  ],
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    },
+    "client": {
+      "platform": "web",
+      "immediately": true,
+      "inject": []
+    },
+    "displayName": "插件页滚动位置记忆",
+    "description": "从插件详情返回列表时回到原来的位置。",
+    "icon": "./icon.svg"
+  },
+  "engines": {
+    "dsh": ">=0.2.0-rc.1 <0.3.0-0"
+  }
+}
